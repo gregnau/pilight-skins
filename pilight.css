@@ -1,0 +1,591 @@
+@font-face {
+	font-family: 'pilight';
+	src:  url('pilight.woff?s4veu5') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#header {
+	height: 41px;
+	font-family: Montserrat;
+	font-weight: normal;
+	color: black;
+}
+
+#cpu, #ram {
+	font-family: pilight;
+	position: absolute;
+	float: left;
+	font-size: 13px;
+	left: 4px;
+}
+
+#helpdlg {
+	background: #efefef;
+}
+
+.ui-loader-background {
+	width: 100%;
+	height: 100%;
+	top:0;
+	margin: 0;
+	background: rgba(0, 0, 0, 0.6);
+	display: none;
+	position: fixed;
+	z-index: 100;
+}
+
+.ui-loading .ui-loader-background {
+    display:block;
+}
+
+#cpu {
+	top: 5px;
+}
+
+#ram {
+	top: 20px;
+	left: 0.4em;
+}
+
+.ui-li-static {
+	height: 27px;
+	padding: 5px 0px 5px 0px;
+}
+
+.dimmer {
+	height: 70px;
+}
+
+.pendingsw .ui-btn {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 15px;
+	padding-top: 6px;
+}
+
+.pendingsw .ui-btn *, .pendingsw .ui-btn *:hover {
+	color: black;
+	text-shadow: none !important;
+}
+
+.pendingsw .ui-btn-icon-left:after, .ui-btn-icon-right:after, .ui-btn-icon-top:after, .ui-btn-icon-bottom:after, .ui-btn-icon-notext:after {
+	background-color: transparent !important;
+}
+
+.pendingsw .ui-icon-loader:after {
+	content: "\e904";
+	top: 42%;
+	font-family: pilight;
+	font-size: 22px;
+	text-shadow: none !important;
+	display: block;
+	-webkit-animation: spin 1s infinite steps(12);
+  	animation: spin 1s infinite steps(12);
+}
+
+.pendingsw .ui-icon-off {
+	background-color: #c1bbcc !important;
+	border-color: #c1bbcc !important;
+	color: #408cbf !important;
+}
+
+.pendingsw .ui-icon-off:after {
+	content: "\e924";
+	top: 42%;
+	font-family: pilight;
+	font-size: 22px;
+	text-shadow: none !important;
+}
+
+.ui-icon-off:hover {
+	background-color: #ab90c3 !important;
+	border-color: #ab90c3 !important;
+	color: #5089af !important;
+}
+
+.pendingsw .ui-icon-on {
+	color: #ffcc00 !important;
+}
+
+.pendingsw .ui-icon-on:after {
+	content: "\e926";  /*play-circle*/
+	top: 42%;
+	font-family: pilight;
+	font-size: 22px;
+	text-shadow: none !important;
+}
+
+.ui-icon-on:hover {
+	background-color: #408cbf;
+	border-color: #408cbf;
+	color: #e0e0e0 !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.pendingsw .ui-icon-loader {
+		background-position: 10px 6px;
+	}
+
+	.pendingsw .ui-icon-off {
+		background-position: 10px 4px;
+	}
+
+	.pendingsw .ui-icon-on {
+		background-position: 10px 4px;
+	}
+}
+
+@media (min-width: 800px) {
+	.ui-content {
+		padding-left: 15vw;
+		padding-right: 15vw;
+	}
+}
+
+.pendingsw .ui-icon-loader.ui-btn-icon-left:after {
+	background-color: transparent !important;
+}
+
+.pendingsw .ui-icon-on.ui-btn-icon-left:after {
+	background-color: transparent !important;
+}
+
+.pendingsw .ui-icon-off.ui-btn-icon-left:after {
+	background-color: transparent !important;
+}
+
+.pendingsw  a {
+	text-decoration: none;
+	color: black;
+}
+
+.ui-btn-right {
+	position: absolute;
+	top: 2px;
+}
+
+.ui-slider {
+	position: relative;
+	top: 25px;
+	width: 100%;
+}
+
+.slider-value {
+	position: absolute;
+	float: left;
+	left: 10px;
+}
+
+div.ui-slider-switch, div.screen {
+	position: absolute;
+	right: 10px;
+}
+
+li.label .text {
+	position: absolute;
+	right: 0px;
+	margin: 2px 5px 0px 5px;
+	color: black;
+}
+
+li.label .marquee {
+	right: 15px;
+	position: relative;
+	float: right;
+	overflow: hidden;
+	font-weight: normal;
+	text-align: right;
+	width: 50%;
+	padding: 4px 5px 0px 5px;
+	white-space: nowrap;
+	height: 25px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	border-radius: 4px 4px 4px 4px;
+}
+
+div.screen {
+	right: -20px;
+	top: -10px;
+	width: 205px;
+}
+
+.ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {
+	display: block;
+}
+
+div.name {
+	padding-top: 4px;
+	position: relative;
+	float: left;
+}
+
+div.humidity, div.temperature, div.pressure,
+div.rain, div.windavg, div.windgust, div.winddir,
+div.temperature_icon, div.temperature_icon_freeze, div.temperature_icon_low,
+div.temperature_icon_med, div.temperature_icon_high, div.temperature_icon_veryh,
+div.humidity_icon, div.pressure_icon,
+div.rain_icon, div.windavg_icon,
+div.windgust_icon, div.winddir_icon,
+div.update_active, div.update_inactive,
+div.sunrise, div.sunset, div.sunset_icon.gray,
+div.sunrise_icon.gray, div.sunset_icon.blue,
+div.sunrise_icon.yellow, div.media_icon, div.action_icon,
+div.battery.red, div.battery.green,
+div.datetime {
+	position: relative;
+	float: right;
+	padding: 6px 0px 0px 0px;
+	font-weight: 500;
+}
+
+div.battery.red, div.battery.green {
+	margin: 6px 0px 0px 0px;
+}
+
+
+div.sunset_icon.gray, div.sunrise_icon.gray,
+div.sunset_icon.blue, div.sunrise_icon.yellow  {
+	width: 19px;
+	height: 16px;
+	margin-right: 8px;
+}
+
+div.temperature_icon, div.temperature_icon_freeze, div.temperature_icon_low,
+div.temperature_icon_med, div.temperature_icon_high, div.temperature_icon_veryh,
+div.humidity_icon, div.pressure_icon,
+div.rain_icon, div.windavg_icon,
+div.windgust_icon {
+	width: 16px;
+	height: 16px;
+	margin-right: 4px;
+}
+
+div.winddir_icon {
+	width: 10px;
+	height: 10px;
+	margin-top: 10px;
+	margin-left: 2px;
+	margin-right: 4px;
+}
+
+div.windgust_icon {
+	margin-right: 4px;
+	margin-left: -16px;
+	margin-top: -4px;
+}
+
+div.update_active, div.update_inactive,
+div.media_icon, div.action_icon {
+	width: 20px;
+	height: 20px;
+}
+
+div.update_active, div.update_inactive {
+	margin: 7px 0px 0px 4px;
+}
+
+div.media_icon, div.action_icon {
+	margin: -8px 10px 0px 4px;
+	font-size: 22px;
+	color: #8c8c8c;
+}
+
+div.battery.red, div.battery.green {
+	width: 10px;
+	height: 16px;
+}
+
+div.webcam_image {
+	position: absolute;
+	float: right;
+	right: 10px;
+	top: 14px;
+}
+
+div.battery.red {
+	-webkit-transform: rotate(-90deg); /*Chrome, Safari*/
+	-moz-transform: rotate(-90deg); /* Firefox */
+	-ms-transform: rotate(-90deg); /* IE */
+	-o-transform: rotate(-90deg); /* Opera */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer (0=0,1=90,2=180,3=270) */
+}
+
+div.battery.red:before {
+	content: "\e917";
+	font-family: pilight;
+	padding-left: 3px;
+	color: #b71c1c;
+	display: block;
+	-webkit-animation: pulse 1s infinite linear;
+	animation: pulse 1s infinite linear;
+}
+
+div.battery.green {
+	-webkit-transform: rotate(-90deg); /*Chrome, Safari*/
+	-moz-transform: rotate(-90deg); /* Firefox */
+	-ms-transform: rotate(-90deg); /* IE */
+	-o-transform: rotate(-90deg); /* Opera */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer (0=0,1=90,2=180,3=270) */
+}
+
+div.battery.green:before {
+	content: "\e918";
+	font-family: pilight;
+	padding-left: 3px;
+	color: #43A047;
+}
+
+div.sunrise_icon.gray:before {
+	content: "\e916";
+	font-family: pilight;
+	font-size: 14px;
+	padding-left: 3px;
+	color: #bdbdbd;
+}
+
+div.sunrise_icon.yellow:before {
+	content: "\e916"; /*sun-o*/
+	font-family: pilight;
+	font-size: 18px;
+	padding-left: 3px;
+	color: #FDD835;
+}
+
+div.sunset_icon.gray:before {
+	content: "\e90e"; /*moon-o*/
+	font-family: pilight;
+	font-size: 14px;
+	padding-left: 3px;
+	color: #bdbdbd;
+}
+
+div.sunset_icon.blue:before {
+	content: "\e90e"; /*moon-o*/
+	font-family: pilight;
+	font-size: 18px;
+	padding-left: 4px;
+	color: #1976D2;
+}
+
+div.temperature_icon_freeze:before {
+	content: "\e919"; /*thermometer-empty*/
+	font-family: pilight;
+	font-size: 20px;
+	padding-left: 3px;
+	color: #8c8c8c;
+}
+
+div.temperature_icon_low:before {
+	content: "\e91c"; /*thermometer-quarter*/
+	font-family: pilight;
+	font-size: 20px;
+	padding-left: 3px;
+	color: #000070;
+}
+
+div.temperature_icon_med:before {
+	content: "\e91b"; /*thermometer-half*/
+	font-family: pilight;
+	font-size: 20px;
+	padding-left: 3px;
+	color: #007000;
+}
+
+div.temperature_icon_high:before {
+	content: "\e91a"; /*thermometer-3-quarter*/
+	font-family: pilight;
+	font-size: 20px;
+	padding-left: 3px;
+	color: #700000;
+}
+
+div.temperature_icon_veryh:before {
+	content: "\e91d"; /*thermometer-full*/
+	font-family: pilight;
+	font-size: 20px;
+	padding-left: 3px;
+	color: #b71c1c;
+}
+
+div.humidity_icon:before {
+	content: "\e915";
+	font-family: pilight;
+	font-size: 20px;
+	padding-left: 3px;
+	color: #70cbce;
+}
+
+div.pressure_icon:after {
+	content: "\e902";
+	font-family: pilight;
+	font-size: 20px;
+	padding-left: 3px;
+}
+
+div.rain_icon:after {
+	content: "\e928";
+	font-family: pilight;
+	font-size: 20px;
+	padding-left: 3px;
+}
+
+div.windavg_icon {
+	margin-top: -4px;
+}
+
+div.windavg_icon:after {
+	content: "\e929";
+	font-family: pilight;
+	font-size: 20px;
+	color: #8c8c8c;
+}
+
+div.winddir_icon:after {
+	content: "\e912";
+	font-family: pilight;
+	font-size: 16px;
+	color: #d15151;
+}
+
+div.windgust_icon:after {
+	content: "\e92a";
+	font-family: pilight;
+	font-size: 16px;
+	color: #8c8c8c;
+}
+
+div.update_active:after {
+	content: "\e913";
+	font-family: pilight;
+	color: orange;
+}
+
+div.update_inactive:after {
+	content: "\e913";
+	font-family: pilight;
+	color: grey;
+}
+
+div.action_icon.play:after {
+	content: "\e90b";
+	font-family: pilight;
+}
+
+div.action_icon.stop:after {
+	content: "\e907";
+	font-family: pilight;
+}
+
+div.action_icon.pause:after {
+	content: "\e908";
+	font-family: pilight;
+}
+
+div.action_icon.screen_active:after {
+	content: "\e920";
+	font-family: pilight;
+}
+
+div.action_icon.screen_inactive:after {
+	content: "\e91f";
+	font-family: pilight;
+}
+
+div.action_icon.shutdown:after {
+	content: "\e91e";
+	font-family: pilight;
+}
+
+div.action_icon.home:after {
+	content: "\e909";
+	font-family: pilight;
+}
+
+div.media_icon.movie:after {
+	content: "\e901";
+	font-family: pilight;
+}
+
+div.media_icon.episode:after {
+	content: "\e900";
+	font-family: pilight;
+}
+
+div.media_icon.song {
+	content: "\e911";
+	font-family: pilight;
+}
+
+
+.ui-loader-verbose h1 {
+	padding-top: 10px;
+}
+.ui-icon-loading {
+	background: none !important;
+	margin-top: -10px !important;
+}
+
+.ui-icon-loading:after {
+	content: "\e903";
+	font-family: pilight;
+	font-size: 48px;
+	color: black;
+	text-shadow: none;
+	display: block;
+	-webkit-animation: spin 1s infinite steps(8);
+	animation: spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg);
+	}
+	100% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		-webkit-transform: rotate(359deg);
+		transform: rotate(359deg);
+	}
+	100% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+	50% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+	100% {
+		-webkit-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+}
+
+@keyframes pulse {
+	0% {
+		-webkit-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+	50% {
+		-webkit-transform: scale(1.2);
+		transform: scale(1.2);
+	}
+	100% {
+		-webkit-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+}

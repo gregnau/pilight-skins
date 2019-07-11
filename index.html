@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<title>pilight webgui</title>
+
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+		<meta http-equiv="x-ua-compatible" content="IE=edge">
+		<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="theme-color" content="#cecece">
+
+		<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="jquery.mobile-1.4.5.min.js"></script>
+		<script type="text/javascript" src="moment.min.js"></script>
+		<script type="text/javascript" src="pilight.js"></script>
+
+		<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" href="pilight.css" />
+		<link rel="stylesheet" href="pilight.jquery.theme.css" />
+		<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700|Montserrat:400,600' rel='stylesheet' type='text/css'>
+		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-iphone.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-ipad.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-iphone-retina-display.png" />
+		<link rel="shortcut icon" sizes="196x196" href="apple-touch-icon-iphone-retina-display-hr.png">
+	</head>
+
+	<body>
+		<div data-role="page" id="p1" data-theme="a">
+			<div data-role="header" id="header" data-theme="a">
+				<div id="cpu"></div>
+				<div id="ram"></div>
+				<h1>pilight webgui</h1>
+				<button type="button" class="ui-btn-right" data-icon="grid" data-iconpos="notext" onclick="if (!document.getElementById('tabs').style.display || document.getElementById('tabs').style.display == 'block') {document.getElementById('tabs').style.display='none'} else {document.getElementById('tabs').style.display='block'}"></button>
+			</div>
+			<div data-role="navbar" id="tabs"></div>
+			<div data-role="content" id="content"></div>
+		</div>
+		<div class="ui-loader-background" id="loader"></div>
+	</body>
+</html>
