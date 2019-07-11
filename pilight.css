@@ -9,7 +9,7 @@
 	height: 41px;
 	font-family: Montserrat;
 	font-weight: normal;
-	color: black;
+	color: white;
 }
 
 #cpu, #ram {
@@ -66,7 +66,7 @@
 }
 
 .pendingsw .ui-btn *, .pendingsw .ui-btn *:hover {
-	color: black;
+	color: inherit;
 	text-shadow: none !important;
 }
 
@@ -88,7 +88,7 @@
 .pendingsw .ui-icon-off {
 	background-color: #c1bbcc !important;
 	border-color: #c1bbcc !important;
-	color: #408cbf !important;
+	color: #3a2266 !important;
 }
 
 .pendingsw .ui-icon-off:after {
@@ -102,11 +102,11 @@
 .ui-icon-off:hover {
 	background-color: #ab90c3 !important;
 	border-color: #ab90c3 !important;
-	color: #5089af !important;
+	color: #301d54 !important;
 }
 
 .pendingsw .ui-icon-on {
-	color: #ffcc00 !important;
+	color: #70cbce !important;
 }
 
 .pendingsw .ui-icon-on:after {
@@ -118,8 +118,8 @@
 }
 
 .ui-icon-on:hover {
-	background-color: #408cbf;
-	border-color: #408cbf;
+	background-color: #3a2266;
+	border-color: #3a2266;
 	color: #e0e0e0 !important;
 }
 
@@ -446,7 +446,7 @@ div.winddir_icon:after {
 	content: "\e912";
 	font-family: pilight;
 	font-size: 16px;
-	color: #d15151;
+	color: #70419a;
 }
 
 div.windgust_icon:after {
