@@ -9,7 +9,7 @@
 	height: 41px;
 	font-family: Montserrat;
 	font-weight: normal;
-	color: black;
+	color: white;
 }
 
 #cpu, #ram {
@@ -66,7 +66,7 @@
 }
 
 .pendingsw .ui-btn *, .pendingsw .ui-btn *:hover {
-	color: black;
+	color: inherit;
 	text-shadow: none !important;
 }
 
@@ -101,8 +101,8 @@
 
 .ui-icon-off:hover {
 	background-color: #ab90c3 !important;
-	border-color: #ab90c3 !important;
-	color: #5089af !important;
+    border-color: #ab90c3 !important;
+    color: #5089af !important;
 }
 
 .pendingsw .ui-icon-on {

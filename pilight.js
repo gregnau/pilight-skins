@@ -160,7 +160,7 @@ function toggleTabs() {
 			'text': '',
 			'textVisible': true,
 			'theme': 'b'
-		});
+		});		
 		window.setTimeout(function() {
 			document.location = document.location;
 		}, 1000);
@@ -599,6 +599,7 @@ function createWeatherElement(sTabId, sDevId, aValues) {
 		if('show-wind' in aValues && aValues['show-wind']) {
 			oTab.find('#'+sDevId+'_weather').append($('<div class="windavg_icon"></div><div class="windavg" id="'+sDevId+'_windavg"></div>'));
 			oTab.find('#'+sDevId+'_weather').append($('<div class="windgust_icon"></div><div class="winddir_icon" id="'+sDevId+'_winddir"></div><div class="windgust" id="'+sDevId+'_windgust"></div>'));
+			// $('#'+sDevId+'_weather .winddir_icon').css({transform: 'rotate(' + aValues['winddir'] + 'deg)'});
 		}
 		if('show-humidity' in aValues && aValues['show-humidity']) {
 			oTab.find('#'+sDevId+'_weather').append($('<div class="humidity_icon"></div><div class="humidity" id="'+sDevId+'_humi"></div>'));
@@ -1012,6 +1013,8 @@ function parseValues(data) {
 						if(dvalues in aDecimals) {
 							$('#'+dvalues+'_windgust').text(vvalues.toFixed(aDecimals[dvalues]['wind']));
 						}
+					} else if(vindex == 'winddir' && $('#'+dvalues+'_winddir').length > 0) {
+						// $('#'+dvalues+'_weather .winddir_icon').css({transform: 'rotate(' + vvalues + 'deg)'});
 					} else if(vindex == 'windavg' && $('#'+dvalues+'_windavg').length > 0) {
 						if(dvalues in aDecimals) {
 							$('#'+dvalues+'_windavg').text(vvalues.toFixed(aDecimals[dvalues]['wind']));
